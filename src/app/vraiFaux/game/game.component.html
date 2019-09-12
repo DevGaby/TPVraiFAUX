@@ -1,0 +1,30 @@
+<StackLayout height="1000">
+    <GridLayout rows="auto"columns="auto, *, auto">
+        <Label [col]="0" fontSize="20" text="SCORE : {{ player.score }}"></Label>
+        <StackLayout col="2" orientation="horizontal">
+            <Image *ngFor="let vie of nbLife; let i = index" width="50" src="res://heart"></Image>
+        </StackLayout>
+    </GridLayout>
+
+    <GridLayout height="500" >
+        <StackLayout verticalAlignment="center">
+            <Label fontSize="20" class="text-center"
+                horizontalAlignment="center"
+                [text]= "game.question"
+                textWrap="true">
+            </Label>
+        </StackLayout>
+    </GridLayout>
+
+    <GridLayout height="50"columns="150, *, 150" >
+        <Button [col]="0" fontSize="20" text="VRAI" 
+            background="red" color="white" (tap)="check(true)">
+        </Button>
+        <StackLayout col="1" orientation="horizontal">
+            <Image *ngFor="let joker of nbJoker; let i = index" width="50" src="res://joker" (tap)="useJoker()"></Image >  
+        </StackLayout>
+        <Button [col]="2" fontSize="20" text="FAUX" 
+            background="green" color="white" (tap)="check(false)">
+        </Button>
+    </GridLayout>
+</StackLayout>

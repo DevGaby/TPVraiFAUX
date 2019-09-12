@@ -1,0 +1,29 @@
+<StackLayout orientation="vertical">
+    <GridLayout 
+        height="200" >
+        <Image borderRadius="25" src="res://vrai_faux"></Image>
+    </GridLayout>
+    <Button  
+        text= "JOUER" [nsRouterLink]="['/game']"
+        background="blue" color="white" fontSize="20"
+        width="250" height="80" borderRadius="25" class="m-10">
+    </Button>               
+    <Button 
+        text= "CLASSEMENT" 
+        background="blue" color="white" fontSize="20"
+        width="250" height="80"  borderRadius="25" class="m-10">
+    </Button>
+    <Button 
+        text= "PROPOSER UNE QUESTION"  
+        background="blue" color="white" fontSize="20"
+        width="250" height="80"  borderRadius="25" class="m-10">
+          <!--   [nsRouterLink]="['/addQuestion']" -->
+    </Button>  
+    <GridLayout>
+       <Button 
+        text= "OPTION"
+        background="red" color="white" fontSize="20"
+        height="80" class="m-b-200">
+    </Button>     
+    </GridLayout> 
+</StackLayout>
