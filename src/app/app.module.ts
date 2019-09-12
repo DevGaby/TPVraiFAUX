@@ -8,9 +8,13 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./vraiFaux/home/home.component";
 import { GameComponent } from "./vraiFaux/game/game.component";
 import { GameOverComponent } from "./vraiFaux/game/game-over.component";
+import { ClassementComponent } from "./vraiFaux/classement/classement.component";
+import { AddQuestionComponent } from "./vraiFaux/add-question/add-question.component";
+import { OptionComponent } from "./vraiFaux/option/option.component";
+
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
@@ -24,13 +28,18 @@ import { GameOverComponent } from "./vraiFaux/game/game-over.component";
     ],
     imports: [
         NativeScriptModule,
-        AppRoutingModule
+        AppRoutingModule,
+        NativeScriptFormsModule,
     ],
     declarations: [
         AppComponent,
         HomeComponent,
         GameComponent,
         GameOverComponent,
+        ClassementComponent,
+        AddQuestionComponent,
+        OptionComponent,
+
     ],
     providers: [],
     schemas: [
