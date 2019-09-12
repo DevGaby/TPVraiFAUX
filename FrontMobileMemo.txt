@@ -1,0 +1,45 @@
+Approche
+1- Web responsive (css, media queries, viewport)
+
+2- Hybridee sans compilation native: installation sur os mobile (ios, android)
+Code client html/cs/js => Encapsule dans un webview
+UE similaire a une apps native
+API native dispo
+
+3- Hybride avec compilation native
+Compile le code source => Natif
+
+Cours : nativescript
+Verif node -v, npm -v
+Install npm install nativescript -g / npm install @angular/cli -g
+Commande tns=>native / script ng=>angular
+
+Modif des varible environnement : env 
+Crea ANDROID_HOME
+Chemin C:\Users\Sarah\AppData\Local\Android\Sdk
+CREA JAVA_HOME
+C:\Program Files\Java\jdk1.8.0_221
+Creation projet nativesrcpt
+!!! Choisir la localisation du folder => tns create demo --ng
+
+Ouvrir le projet avec vscode : code .
+Diagnostic si code compatible vers device : tns doctor
+
+Ouvrir terminal vsc : tns run android --bundle
+
+Tuto Creation du projet
+!!! Tous d'abord fermer les émulateurs ouvert !!!
+1- Ouvrir un fenetre de commande
+2- Choisir son emplacement
+3- Creer son projet => tns create [nomProjet]--ng
+4- Ouvrir le projet ds vscode => code .
+5- Lancer l'émulateur (ou le creer si pas encore fait)
+6- Fermer la fenetre cmd et re ouvrir une nouvelle
+7- Lancer sur le projet => tns doctor
+8- Dans vscode ouvrir un terminal et lancer => tns run android --bundle
+
+Tns device permet de voir si emulateur est connecté
+
+Git Add
+Git Commit
+Git Push
