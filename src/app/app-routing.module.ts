@@ -7,8 +7,8 @@ import { HomeComponent } from "./vraiFaux/home/home.component";
 import { GameComponent } from "./vraiFaux/game/game.component";
 import { GameOverComponent } from "./vraiFaux/game/game-over.component";
 import { ClassementComponent } from "./vraiFaux/classement/classement.component";
-import { AddQuestionComponent } from "./vraiFaux/add-question/add-question.component";
 import { OptionComponent } from "./vraiFaux/option/option.component";
+import { ListQuestionComponent } from "./vraiFaux/list-question/list-question.component";
 
 
 const routes: Routes = [
@@ -17,7 +17,7 @@ const routes: Routes = [
     { path: "game", component: GameComponent },
     { path: "gameOver", component: GameOverComponent},
     { path: "classement", component: ClassementComponent},
-    { path: "addQuestion", component: AddQuestionComponent},
+    { path: "listQuestion", component: ListQuestionComponent},
     { path: "option", component: OptionComponent},
     
 ];

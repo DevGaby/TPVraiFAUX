@@ -1,7 +1,7 @@
 export class Level {
-    niveau: string ='';
+    label: string ='';
 
     constructor( niveau: string ) {
-        this.niveau = niveau;
+        this.label = niveau;
     }
 }

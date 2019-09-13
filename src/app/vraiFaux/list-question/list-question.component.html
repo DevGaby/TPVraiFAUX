@@ -1,0 +1,21 @@
+<StackLayout >
+    <add-question (questionAdded)="addQuestion($event)" ></add-question>
+    <Label fontSize="20" class="text-center"
+           text= "LISTE DES QUESTIONS" horizontalAlignment="center">
+    </Label> 
+    <!-- <ScrollView> -->
+        <!-- <StackLayout>
+            <ListView height="150" [items]="questions">
+                <ng-template let-country="question" let-i="index" let-odd="odd" let-even="even">
+                    <Label [text]= "q.question"> </Label>     
+                </ng-template>
+            </ListView>
+        </StackLayout>   
+    </ScrollView> -->
+<!-- Ajouter un scrolling -->
+
+        <GridLayout height="20" *ngFor ="let q of questions">
+            <Label [text]= "q.question"> </Label>
+        </GridLayout>
+</StackLayout>
+        

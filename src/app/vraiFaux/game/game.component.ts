@@ -1,9 +1,11 @@
+import { RouterExtensions } from "nativescript-angular/router";
+import * as dialogs from "tns-core-modules/ui/dialogs";
+
 import { Component, OnInit } from "@angular/core";
 import { VraiFauxService } from "../service/vraifaux.service";
 import { Question } from "../model/question.model";
 import { Player } from "../model/player.model";
-import { RouterExtensions } from "nativescript-angular/router";
-import * as dialogs from "tns-core-modules/ui/dialogs";
+
 
 @Component({
     selector: 'game',
@@ -24,7 +26,6 @@ export class GameComponent implements OnInit {
     ngOnInit(){
     this.showQuestion();
     this.player = new Player(3,2,0);
-    // this.nbLife = this.player.nb_vie;
     this.nbLife = Array(this.player.nb_vie).fill(0);
     this.nbJoker = Array(this.player.nb_joker).fill(0);
     }
@@ -35,48 +36,44 @@ export class GameComponent implements OnInit {
     }
 
     check(choice){
-        console.log(this.nbLife.length);
         if(this.nbLife.length > 0){
             if(this.game.controlResponse == choice){
                 this.player.score++;
                 this.showQuestion();
 
-                } else {
-                    dialogs.confirm({
-                        message: this.game.response,
-                    }).then(result => {    
-                    });
-
-                    if( this.player.score > 0){
+            } else {
+                dialogs.confirm({
+                    message: this.game.response,
+                    okButtonText: "OK",
+                }).then(result => { 
+                    this.nbLife.pop();  
+                    if(this.player.score >0){
                         this.player.score--;
-                        this.nbLife.pop();  
-                        this.showQuestion();
-                    }else {
-                        this.nbLife.pop();  
-                        this.showQuestion();
                     }
-                }
-        } else if(this.nbLife.length == 0){
-             this.router.navigateByUrl("/gameOver");
+                    if(this.nbLife.length > 0) {
+                        this.showQuestion();
+                    } else {
+                        this.router.navigateByUrl("/gameOver");
+                    }
+                });
+            }
         }
            
     }
 
     useJoker(){
-        // if(this.nbJoker.length > 0){
-        //     dialogs.confirm({
-        //         title: "Option Joker",
-        //         message: "Voulez-vous utiliser votre joker",
-        //         okButtonText: "OUI",
-        //         cancelButtonText: "NON",
-        //     }).then(result => {
-        //         // result argument is boolean
-        //         if(result == true){
-        //             this.nbJoker.pop();
-        //             this.showQuestion();
-        //         }
-        //     });
-        // }
-        this.router.navigateByUrl("/gameOver");
+        if(this.nbJoker.length > 0){
+            dialogs.confirm({
+                title: "Option Joker",
+                message: "Voulez-vous utiliser votre joker?",
+                okButtonText: "OUI",
+                cancelButtonText: "NON",
+            }).then(result => {
+                if(result == true){
+                    this.nbJoker.pop();
+                    this.showQuestion();
+                }
+            });
+        }
     }
 }
